@@ -1,15 +1,22 @@
 import React from 'react';
 import {Menu} from "../menu/Menu";
+import {v1} from "uuid";
 
 export const Header: React.FC = () => {
-    const navItem = ['News', 'Profile', 'Music', 'Friends', 'Settings']
+    const navItem = [
+        {id: v1(), name: 'News', path: '/news'},
+        {id: v1(), name: 'Profile', path: '/profile'},
+        {id: v1(), name: 'Dialogs', path: '/dialogs'},
+        {id: v1(), name: 'Friends', path: '/friends'},
+        {id: v1(), name: 'Settings', path: '/settings'}
+    ]
 
     return (
-        <header>
-            <div>
+        <header className={'header'}>
+            <div className={'logo'}>
                 Logo
             </div>
-            <Menu itemMenu={navItem}/>
+            <Menu itemsMenu={navItem}/>
         </header>
     );
 };

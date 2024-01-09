@@ -1,8 +1,18 @@
 import React from 'react';
 import {Profile} from "../profile/Profile";
+import {Dialogs} from "../dialogs/Dialogs";
+import {Route} from "react-router-dom";
 
-export const Content = () => {
+type PropsType = {
+
+}
+
+export const Content:React.FC<PropsType> = (props) => {
     return (
-        <Profile/>
+        <section className={'content'}>
+            <Route component={Dialogs} path={'/dialogs'}/>
+            <Route component={Profile} path={'/profile'}/>
+        </section>
+
     );
 };

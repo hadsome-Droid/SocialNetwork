@@ -1,6 +1,10 @@
 import React from 'react';
 
-export const Profile = () => {
+type PropsType = {
+
+}
+
+export const Profile:React.FC<PropsType> = (props) => {
     return (
         <div>
             Profile
