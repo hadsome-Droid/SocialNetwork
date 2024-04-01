@@ -2,6 +2,7 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 import S from './Dialogs.module.css'
 import {v1} from "uuid";
+import {Dialog} from "./dialog/Dialog";
 
 type PropsType = {
 
@@ -27,9 +28,7 @@ export const Dialogs:React.FC<PropsType> = (props) => {
             <div className={S.conversations_items}>
                 {
                     users.map(user => {
-                        return <div className={S.conversation}>
-                        <NavLink to={`/dialogs/${user.id}`}>{user.name}</NavLink>
-                            </div>
+                        return <Dialog userId={user.id} name={user.name} messages={messages}/>
                     })
                 }
             </div>

@@ -1,8 +1,10 @@
 import React from 'react';
+import S from "../Dialogs.module.css";
+import {NavLink} from "react-router-dom";
 
 
 type DialogPropsType = {
-    id: string
+    userId: string
     name: string
     messages: MessagePropsType[]
 }
@@ -13,10 +15,10 @@ type MessagePropsType = {
 }
 
 export const Dialog = (props:DialogPropsType) => {
-    const {id, name, messages} = props
+    const {userId, name, messages} = props
     return (
-        <div>
-            {id}
+        <div className={S.conversation}>
+            <NavLink to={`/dialogs/${userId}`}>{name}</NavLink>
         </div>
     );
 };
