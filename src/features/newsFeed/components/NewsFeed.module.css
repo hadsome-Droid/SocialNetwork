@@ -1,3 +1,116 @@
-.post{
+.post {
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
 
+.postAuthor {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.authorAvatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #b78502;
+    margin-right: 20px;
+}
+
+.authorName {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.postText {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
+.postDetails {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #666;
+}
+
+.postDate {
+
+}
+
+.postLikes {
+
+}
+
+.likeBtn {
+    position: relative;
+    padding: 10px 20px;
+    /*color: #FFF;*/
+    /*background-color: #FF4500;*/
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.likeBtn:hover{
+    /*background-color: #FF6347;*/
+    transform: translate(-2px, -2px);
+}
+
+.likeBtn img{
+    width: 25px;
+    height: 25px;
+}
+
+.feedContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+
+}
+
+.feedContainer h2 {
+    text-align: center;
+}
+
+.feed{
+    overflow-y: auto;
+    height: calc(100vh - 100px);
+    margin-bottom: 100px;
+}
+
+.feedForm{
+    position: fixed;
+    bottom: 0;
+    left: 230px;
+    right: 0;
+    height: 100px;
+}
+
+.postForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #a4a4a4;
+    border-radius: 7px;
+    /*border-top: 1px solid #e7e7e7;*/
+}
+.formText, .submitButton{
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    height: 60px;
+
+}
+
+.formText{
+    width: 100%;
+    /*height: 50px;*/
 }
