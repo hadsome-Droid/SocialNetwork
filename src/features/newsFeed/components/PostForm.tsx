@@ -19,7 +19,6 @@ export const PostForm = ({formHandler}:Props) => {
     } = useForm<Inputs>()
 
     const onSubmit: SubmitHandler<Inputs> = (data) => {
-        console.log(data)
         formHandler(data.postText)
     }
 

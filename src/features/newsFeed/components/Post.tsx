@@ -15,11 +15,11 @@ type Props = {
     changeLike: (id: string, isChanged: boolean, likeCount: string) => void
 }
 
-// todo likeCount
 export const Post = ({authorName, postDate, postText, likesCount, avatarUrl, isLiked, changeLike, postId}: Props) => {
  const   clickHandler = () => {
      let isChanged = !isLiked
-     changeLike(postId, isChanged, likesCount)
+     let setLikeCont =  isChanged ? +likesCount + 1 : +likesCount - 1
+     changeLike(postId, isChanged, String(setLikeCont))
  }
 
 
@@ -35,7 +35,6 @@ export const Post = ({authorName, postDate, postText, likesCount, avatarUrl, isL
                 <button className={s.likeBtn} onClick={clickHandler}>
                     <img src={isLiked ? isLike : Like} alt="Like Button"/>  {likesCount}
                 </button>
-                {/*<span className={s.postLikes}>Количество лайков: {likesCount}</span>*/}
             </div>
         </div>
     );
