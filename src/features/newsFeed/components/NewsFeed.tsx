@@ -9,24 +9,15 @@ import {useSelector} from "react-redux";
 import {AppRootStateType} from "../../../app/store";
 import {newsFeedActions} from "./newsFeedSlice";
 
-
+//todo tests
 export const NewsFeed = () => {
 
     const newsFeed = useSelector((state: AppRootStateType) => state.newsFeed.newsFeed)
     const dispatch = useAppDispatch()
 
-    const [page, setPage] = useState(1);
-    const [limit] = useState(3);
 
-//todo fixed error react-dom.development.js:67 Warning: Encountered two children with the same key, `d3b96ac0-f5d4-11ee-90ba-856e38e8047a`
-    useEffect(() => {
-        const loadPosts = () => {
-            let newPosts = newsFeed.slice((page - 1) * limit, page * limit);
-            dispatch(newsFeedActions.loadMorePosts({newPosts}));
-        }
-        loadPosts();
-    }, [page]);
-    console.log(page, '=========')
+    useEffect(() => {}, );
+
 
     const addNewPost = (text: string) => {
         let now = new Date()
@@ -47,14 +38,8 @@ export const NewsFeed = () => {
         dispatch(newsFeedActions.toggleLike({id, isLiked: isChanged, newLikeCount: likeCount}))
     }
 
-    const scrollToEnd = () => {
-        setPage(prevPage => prevPage + 1)
-    }
-
-    window.onscroll = () => {
-        if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight) {
-            scrollToEnd()
-        }
+    const changePostMessage = (id: string, text: string) => {
+        dispatch(newsFeedActions.changePost({id, text}))
     }
 
     return (
@@ -72,6 +57,7 @@ export const NewsFeed = () => {
                         avatarUrl={DefUserPhoto}
                         isLiked={post.isLiked}
                         changeLike={changeLike}
+                        changePostMessage={changePostMessage}
                     />
                 })}
             </div>

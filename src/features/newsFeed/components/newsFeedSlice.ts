@@ -37,6 +37,13 @@ const slice = createSlice({
                 state.newsFeed[index] = {...state.newsFeed[index], likeCount: action.payload.newLikeCount, isLiked: action.payload.isLiked}
             }
         },
+        changePost: (state, action: PayloadAction<{id: string, text: string}>) => {
+            const index = state.newsFeed.findIndex(el => el.id === action.payload.id)
+            if(index !== -1) {
+                // state.newsFeed[index] = {...state.newsFeed[index], postText: action.payload.text}
+                state.newsFeed[index].postText = action.payload.text
+            }
+        },
         loadMorePosts: (state, action: PayloadAction<{newPosts: Post[]}>) => {
             state.newsFeed = [...state.newsFeed, ...action.payload.newPosts];
         }
