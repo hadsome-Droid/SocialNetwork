@@ -1,5 +1,5 @@
 import {configureStore} from "@reduxjs/toolkit";
-import {newsFeedReducer} from "../features/newsFeed/components/newsFeedSlice";
+import {newsFeedReducer} from "../features/newsFeed/model/newsFeedSlice";
 
 
 export const store = configureStore({

@@ -7,7 +7,7 @@ import s from './NewsFeed.module.css'
 import {useAppDispatch} from "../../../shared/utils/useAppDispatch";
 import {useSelector} from "react-redux";
 import {AppRootStateType} from "../../../app/store";
-import {newsFeedActions} from "./newsFeedSlice";
+import {newsFeedActions} from "../model/newsFeedSlice";
 
 //todo tests
 export const NewsFeed = () => {

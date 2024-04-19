@@ -1,8 +1,8 @@
 import React from 'react';
 
 import s from './Profile.module.css'
-import {ProfileInfo} from "./profileInfo/ProfileInfo";
-import {MyPostsList} from "./myPosts/MyPostsList";
+import {ProfileInfo} from "../profileInfo/ProfileInfo";
+import {MyPostsList} from "../myPosts/MyPostsList";
 
 
 type PropsType = {

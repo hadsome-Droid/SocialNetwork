@@ -43,9 +43,6 @@ const slice = createSlice({
                 // state.newsFeed[index] = {...state.newsFeed[index], postText: action.payload.text}
                 state.newsFeed[index].postText = action.payload.text
             }
-        },
-        loadMorePosts: (state, action: PayloadAction<{newPosts: Post[]}>) => {
-            state.newsFeed = [...state.newsFeed, ...action.payload.newPosts];
         }
     }
 })

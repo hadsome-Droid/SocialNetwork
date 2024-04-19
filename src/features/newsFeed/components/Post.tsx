@@ -38,10 +38,6 @@ export const Post = ({authorName, postDate, postText, likesCount, avatarUrl, isL
                 <h2 className={s.authorName}>{authorName}</h2>
             </div>
             <EditableSpan text={postText} callBack={onChange}/>
-            {/*{ edit*/}
-            {/*    ? <input type="text" onBlur={() => setEdit(false)}/>*/}
-            {/*    : <span className={s.postText}  onDoubleClick={() => setEdit(true)}>{postText}</span>*/}
-            {/*}*/}
             <div className={s.postDetails}>
                 <span className={s.postDate}>{postDate}</span>
                 <button className={s.likeBtn} onClick={clickHandler}>

@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Route} from "react-router-dom";
 import {Dialogs} from "../dialogs/Dialogs";
-import {Profile} from "../profile/Profile";
+import {Profile} from "../profile/ui/profile/Profile";
 import {NewsFeed} from "../newsFeed/components/NewsFeed";
 
 type PropsType = {

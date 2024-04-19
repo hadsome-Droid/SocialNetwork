@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {Post, PostPropsType} from "../../content/post/Post";
-import {Button} from "../../../shared/components/Button/Button";
+import {Post, PostPropsType} from "../../../content/post/Post";
+import {Button} from "../../../../shared/components/Button/Button";
 
 
 
