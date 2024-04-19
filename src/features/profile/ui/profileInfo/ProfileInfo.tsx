@@ -1,8 +1,21 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import DefPhoto from './../../../../shared/image/def-profile-photo.svg'
 import s from './ProfileInfo.module.css'
+import {useAppDispatch} from "../../../../shared/utils/useAppDispatch";
+import {profileThunks} from "../../model/profileSlice";
+import {useSelector} from "react-redux";
+import {profileSelector} from "../../../../shared/utils/selectors/profileSelectors";
 
 export const ProfileInfo = () => {
+
+    const profile = useSelector(profileSelector)
+    const dispatch = useAppDispatch()
+
+    useEffect(() => {
+        dispatch(profileThunks.getProfile())
+    }, []);
+
+    console.log(profile)
     const[editMode, setEditMode] = useState(false)
 
     const clickHandler = () => {
